@@ -1,0 +1,23 @@
+package com.sutherland.config;
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+server.servelet.contextpath: /creditscoreapp
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class GatewayConfiguration {
+
+	@Bean
+	public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
+		
+		return builder.routes()
+				.route(cs->cs.path("/creditscoreapp/**")
+				.uri("lb://creditscore-service"))
+				
+				.route(ls->ls.path("/loanapp/**")
+				.uri("lb://loan-service"))
+				.build();
+	}
+}

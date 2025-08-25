@@ -1,0 +1,33 @@
+package com.sutherland.library.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.sutherland.library.entity.User;
+import com.sutherland.library.service.UserService;
+
+@RestController
+@RequestMapping("/user")
+@CrossOrigin(origins = "http://localhost:3000")
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/add")
+    public ResponseEntity<String> addUser(@RequestBody User user) {
+        userService.addUser(user);
+        return ResponseEntity.ok("User added successfully");
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> validateLogin(@RequestBody User user) {
+        User validUser = userService.validateLogin(user.getUsername(), user.getPassword());
+        if (validUser != null) {
+            return ResponseEntity.ok(validUser);
+        } else {
+            return ResponseEntity.status(401).body("Invalid credentials");
+        }
+    }
+}

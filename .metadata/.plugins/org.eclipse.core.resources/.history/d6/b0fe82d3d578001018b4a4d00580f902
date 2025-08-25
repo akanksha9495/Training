@@ -1,0 +1,82 @@
+package com.sutherland.loan.service;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.loan.dto.CreditScore;
+import com.sutherland.loan.entity.LoanDetails;
+import com.sutherland.aadhar.entity.AadharDetails;
+import com.sutherland.aadhar.service.AadharDetailsService;
+import com.sutherland.loan.repo.CreditScoreServiceProxy;
+import com.sutherland.loan.repo.LoanDetailsRepo;
+
+@Service
+public class LoanDetailsServiceImpl implements LoanDetailsService {
+    
+    @Autowired
+    LoanDetailsRepo repo;
+    
+    @Autowired
+    AadharDetailsService aadharService;  
+    
+    @Autowired
+    CreditScoreServiceProxy proxy;
+    
+    @Override
+    public int applyLoan(LoanDetails details) {
+       
+        AadharDetails aadharDetails = aadharService.findByAadharNumber(details.getPancard()); 
+        
+        
+        if (aadharDetails == null) {
+            details.setLoanStatus("Rejected");
+            details.setRemarks("Invalid Aadhar Number");
+            repo.save(details);  
+            return details.getLoanId();  
+        }
+        
+        
+        details.setLoanStatus("APPLIED");
+        details.setDateApplied(LocalDate.now());
+        details.setDateSanctioned(null); 
+        repo.save(details);
+        
+        return details.getLoanId(); 
+    }
+
+    @Override
+    public List<LoanDetails> findAll() {
+        return repo.findAll();
+    }
+
+    @Override
+    public LoanDetails checkLoanStatus(int loanId) {
+        Optional<LoanDetails> details = repo.findById(loanId);
+        return details.orElse(null);
+    }
+
+    @Override
+    public String verifyLoan(int loanId) {
+        Optional<LoanDetails> optional = repo.findById(loanId);
+        LoanDetails loandetails = optional.orElse(null);
+        
+        if (loandetails != null) {
+            CreditScore score = proxy.getCreditScore(loandetails.getPancard());
+            loandetails.setCreditscore(score.getScore());
+            
+            if (loandetails.getCreditscore() > 600) {
+                loandetails.setLoanStatus("Approved");
+                loandetails.setDateSanctioned(LocalDate.now());
+            } else {
+                loandetails.setLoanStatus("Rejected");
+                loandetails.setRemarks("Credit score is less than 600");
+            }
+            repo.save(loandetails);
+        }
+        return null; 
+    }
+}

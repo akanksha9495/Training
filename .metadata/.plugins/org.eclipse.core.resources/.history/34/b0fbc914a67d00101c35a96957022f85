@@ -1,0 +1,12 @@
+package com.sutherland.library.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.sutherland.library.entity.Login;
+import com.sutherland.library.entity.User;
+
+@Repository
+public interface UserRepository extends JpaRepository<Login, String> {
+    Login findByUsernameAndPassword(String username, String password);
+}

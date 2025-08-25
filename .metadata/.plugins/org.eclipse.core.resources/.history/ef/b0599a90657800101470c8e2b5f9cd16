@@ -1,0 +1,11 @@
+package com.sutherland.aadhar.service;
+
+import java.util.List;
+
+import com.sutherland.aadhar.entity.AadharDetails;
+
+public interface AadharDetailsService {
+    int registerAadhar(AadharDetails details);
+    List<AadharDetails> findAll();
+    AadharDetails findByAadharNumber(String aadharNumber); 
+}

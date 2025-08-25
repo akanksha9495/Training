@@ -1,0 +1,16 @@
+package com.sutherland.library.service;
+
+import java.util.List;
+
+import com.sutherland.library.entity.Book;
+import com.sutherland.library.exceptions.BookIdAlreadyExistsException;
+
+public interface BookService {
+	void addBook(Book book) throws BookIdAlreadyExistsException;
+	List<Book> getAllBooks();
+	Book getBookById(int bookId);
+	void updateBook(Book book);
+	boolean deleteBook(int bookId);
+	List<Book> getBookByAuthor(String author);
+	List<Book> getBookByTitleLike(String title);
+}

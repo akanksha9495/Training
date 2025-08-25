@@ -1,0 +1,41 @@
+package com.sutherland.aadhar.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.aadhar.entity.AadharDetails;
+import com.sutherland.loan.repo.AadharDetailsRepo;
+
+@Service
+public class AadharDetailsServiceImpl implements AadharDetailsService {
+
+    @Autowired
+    private AadharDetailsRepo repo;
+
+    @Override
+    public int registerAadhar(AadharDetails details) {
+        
+        AadharDetails savedAadhar = repo.save(details);
+        return savedAadhar.getId();
+    }
+
+    @Override
+    public List<AadharDetails> findAll() {
+        
+        return repo.findAll();
+    }
+
+    @Override
+    public AadharDetails findByAadharNumber(String aadharNumber) {
+       
+        return repo.findByAadharNumber(aadharNumber).orElse(null);
+    }
+
+    @Override
+    public AadharDetails verifyAadhar(String aadharNumber) {
+       
+        return repo.findByAadharNumber(aadharNumber).orElse(null);
+    }
+}

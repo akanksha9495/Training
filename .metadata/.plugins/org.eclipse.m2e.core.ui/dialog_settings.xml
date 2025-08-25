@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\user\Downloads\sutherland-library-app-updated\sutherland-library-app-updated\src\main\java\com\sutherland\library\entity\Book.java"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-13 (4)\creditscore-service (2)"/>
+			<item value="C:\Users\user\Downloads\sutherland-eureka-server\sutherland-eureka-server"/>
+			<item value="C:\Users\user\Downloads\creditscore-service\creditscore-service"/>
+			<item value="C:\Users\user\Downloads\sutherland.library.app\sutherland.library.app\pom.xml"/>
+			<item value="C:\Users\user\Downloads\SampleSpringBoot\SampleSpringBoot\src\main\java\Sample\SampleSpringBoot\SampleSpringBootApplication.java"/>
+			<item value="C:\Users\user\Documents\sample\hibernate-example\src\main\java\com\sutherland\entity\UpdateEmployee.java"/>
+			<item value="C:\Users\user\Documents\sample\new java project\src\day3"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.sutherland.aadhar"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="aadhar"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+		<list key="archetypeGroupId">
+			<item value="com.sutherland"/>
+		</list>
+		<list key="archetypeArtifactId">
+			<item value="hibernate.example"/>
+		</list>
+		<list key="archetypeVersion">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+		<list key="repositoryUrl">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\user\Downloads\sutherland-book-app\sutherland-book-app"/>
+			<item value="C:\Users\user\Downloads\sutherland-config-server-client\sutherland-config-server-client"/>
+			<item value="C:\Users\user\Downloads\sutherland-config-server\sutherland-config-server"/>
+			<item value="C:\Users\user\Downloads\sutherland-loan-service\sutherland-loan-service"/>
+			<item value="C:\Users\user\Downloads\sutherland-gateway-service\sutherland-gateway-service"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-13 (4)\creditscore-service (2)"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-13 (2)\loan-service (1)"/>
+			<item value="C:\Users\user\Downloads\sutherland-eureka-server"/>
+			<item value="C:\Users\user\Downloads\loan-service\loan-service"/>
+			<item value="C:\Users\user\Downloads\creditscore-service\creditscore-service"/>
+			<item value="C:\Users\user\Documents\sample\sample"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app-updated\sutherland-library-app-updated"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app (1)\sutherland-library-app-updated"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-11\sutherland-library-app (1)"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app\sutherland-library-app"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>
